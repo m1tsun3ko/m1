@@ -6,6 +6,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
 const username = form.querySelector('input[name="username"]').value.trim();
 const password = form.querySelector('input[name="password"]').value;
 const confirm = form.querySelector('input[name="confirm"]').value;
+  
 const enable_2fa = form.querySelector('input[name="enable_2fa"]').checked;
 
   if (password !== confirm) {
