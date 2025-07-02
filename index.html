@@ -5,31 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Лента — M1</title>
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="/assets/fonts.css">
   <link rel="stylesheet" href="/assets/style.css">
   <script src="/assets/js/api.js" defer></script>
   <script src="/assets/js/theme.js" defer></script>
   <script src="/assets/js/feed.js" defer></script>
+  <script src="/assets/js/modal.js" defer></script>
 </head>
 <body>
   <div class="app">
     <header class="header frosty">
-      <h1>M1</h1>
-      <div class="nav">
-        <a href="/chat.html">Чаты</a>
-        <a href="/notifications.html">Уведомления</a>
-        <a href="/my.html">Профиль</a>
-      </div>
+      <h1 class="logo">M1</h1>
+      <nav class="nav">
+        <a href="/chat.html" class="nav-btn">Чаты</a>
+        <a href="#" class="nav-btn" onclick="openModal('/notifications.html')">Уведомления</a>
+        <a href="/my.html" class="nav-btn">Профиль</a>
+      </nav>
     </header>
 
     <main class="content frosty">
       <div id="feed-container">
-        <!-- Посты подгружаются здесь -->
+        <!-- Посты подгружаются сюда -->
       </div>
     </main>
 
-    <div class="popup" id="modal">
-      <!-- Всплывающее окно внутри страницы (мелкие страницы) -->
+    <div class="popup frosty-glass" id="modal">
+      <div class="modal-content" id="modal-content"></div>
     </div>
   </div>
 </body>
