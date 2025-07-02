@@ -13,7 +13,7 @@ const enable_2fa = form.querySelector('input[name="enable_2fa"]').checked;
     return;
   }
 
-  const res = await fetch("http://versanainb.temp.swtest.ru/backend/auth/register.php", {
+  const res = await fetch("https://versanainb.temp.swtest.ru/backend/auth/register.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password, enable_2fa })

@@ -1,4 +1,4 @@
-const API_BASE = "http://versanainb.temp.swtest.ru/backend";
+const API_BASE = "https://versanainb.temp.swtest.ru/backend";
 
 let currentChatId = null;
 let replyTo = null;
@@ -135,7 +135,7 @@ async function sendMessage() {
 
   const token = localStorage.getItem("token");
 
-  const res = await fetch("http://versanainb.temp.swtest.ru/backend/api/send_message.php", {
+  const res = await fetch("https://versanainb.temp.swtest.ru/backend/api/send_message.php", {
     method: "POST",
     headers: {
       Authorization: token
@@ -157,7 +157,7 @@ async function loadMessages(chatId) {
   window.currentChatId = chatId;
 
   const token = localStorage.getItem("token");
-  const res = await fetch(`http://versanainb.temp.swtest.ru/backend/chat/load_chat.php?chat_id=${chatId}`, {
+  const res = await fetch(`https://versanainb.temp.swtest.ru/backend/chat/load_chat.php?chat_id=${chatId}`, {
     headers: { Authorization: token }
   });
 
@@ -209,7 +209,7 @@ async function loadMessages(chatId) {
     // Медиа
     if (msg.image_path) {
       const media = document.createElement("img");
-      media.src = `http://versanainb.temp.swtest.ru/backend${msg.image_path}`;
+      media.src = `https://versanainb.temp.swtest.ru/backend${msg.image_path}`;
       media.style.maxWidth = "100%";
       media.style.marginTop = "8px";
       div.appendChild(media);
@@ -255,7 +255,7 @@ document.getElementById("send-form").addEventListener("submit", async (e) => {
     formData.append("media", media);
   }
 
-  const res = await fetch("http://versanainb.temp.swtest.ru/backend/api/send_message.php", {
+  const res = await fetch("https://versanainb.temp.swtest.ru/backend/api/send_message.php", {
     method: "POST",
     headers: {
       Authorization: localStorage.getItem("token")
@@ -303,7 +303,7 @@ document.getElementById("send-form").addEventListener("submit", async (e) => {
   }
 });
 
-fetch("http://versanainb.temp.swtest.ru/backend/api/send_message.php", {
+fetch("https://versanainb.temp.swtest.ru/backend/api/send_message.php", {
   method: "POST",
   headers: {
     Authorization: localStorage.getItem("token")
