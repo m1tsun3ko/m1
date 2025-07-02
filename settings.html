@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Настройки — M1</title>
+  <link rel="stylesheet" href="/assets/fonts.css">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/settings.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <main class="content frosty">
+      <h2>Настройки</h2>
+
+      <section>
+        <h3>Тема</h3>
+        <button onclick="setTheme('light')">Светлая</button>
+        <button onclick="setTheme('dark')">Тёмная</button>
+      </section>
+
+      <section>
+        <h3>Обои чата</h3>
+        <input type="file" accept="image/*" onchange="saveChatBackground(this)">
+        <button onclick="clearChatBackground()">Сбросить</button>
+      </section>
+
+      <section>
+        <h3>Сессии</h3>
+        <button onclick="logoutAll()">Выйти на всех устройствах</button>
+      </section>
+
+      <section>
+        <h3>2FA (вход по коду)</h3>
+        <label>
+          <input type="checkbox" id="2fa-toggle" onchange="toggle2FA(this)">
+          Запрашивать код при входе
+        </label>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
