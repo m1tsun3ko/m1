@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Регистрация — M1</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/fonts.css" />
+  <script src="/assets/js/register.js" defer></script>
+</head>
+<body class="login-page gradient-bg">
+  <div class="login-container frosty-glass animated">
+    <h1 class="login-title">Создать аккаунт</h1>
+    <form id="register-form">
+      <input type="text" name="username" placeholder="Имя пользователя" required />
+      <input type="password" name="password" placeholder="Пароль" required />
+      <input type="password" name="confirm" placeholder="Повторите пароль" required />
+      <label class="checkbox">
+        <input type="checkbox" name="enable_2fa" />
+        Включить 2FA (двухэтапная аутентификация)
+      </label>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+    <p class="small-text">
+      Уже есть аккаунт? <a href="/login.html">Войти</a>
+    </p>
+  </div>
+</body>
+</html>

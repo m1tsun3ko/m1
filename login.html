@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вход — M1</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/fonts.css" />
+  <script src="/assets/js/login.js" defer></script>
+</head>
+<body class="login-page gradient-bg">
+  <div class="login-container frosty-glass animated">
+    <h1 class="login-title">Вход в аккаунт</h1>
+    <form id="login-form">
+      <input type="text" name="username" placeholder="Имя пользователя" required />
+      <input type="password" name="password" placeholder="Пароль" required />
+      <button type="submit">Войти</button>
+    </form>
+    <p class="small-text">
+      <a href="/recovery.html">Забыли пароль?</a>
+    </p>
+  </div>
+
+  <!-- Модалка для 2FA -->
+  <div class="popup frosty-glass" id="2fa-modal" style="display:none;">
+    <div class="modal-content">
+      <h2>Введите код подтверждения</h2>
+      <form id="2fa-form">
+        <input type="text" name="code" placeholder="6-значный код" required />
+        <button type="submit">Подтвердить</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

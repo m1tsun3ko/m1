@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Чат — M1</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/fonts.css" />
+  <script src="/assets/js/chat.js" defer></script>
+</head>
+<body>
+  <div class="app chat-layout">
+    <aside class="chat-list frosty-glass" id="chat-list">
+      <!-- Чаты -->
+    </aside>
+
+<main class="chat-content frosty" id="chat-container">
+  <!-- Сообщения будут подгружаться сюда -->
+</main>
+
+    <main class="chat-main" id="chat-main">
+      <div class="chat-header frosty-glass" id="chat-header"></div>
+      <div class="chat-messages" id="chat-messages"></div>
+<div class="chat-input frosty-glass">
+  <input type="text" id="message-input" placeholder="Напиши что-нибудь..." maxlength="300">
+  
+  <label for="media-input" class="media-btn">📎</label>
+  <input type="file" id="media-input" accept="image/*,video/*" hidden>
+
+  <button id="send-btn">➤</button>
+</div>
+<form id="send-form" class="send-box frosty-glass">
+  <input type="file" id="media" style="display: none" accept="image/*,video/*" />
+  <textarea id="msg" placeholder="Напиши что-нибудь..." required></textarea>
+  <div class="reply-preview" id="reply-preview" style="display:none;"></div>
+  <button type="button" onclick="document.getElementById('media').click()">📎</button>
+  <button type="submit">➤</button>
+</form>
+
+<div id="reply-preview" style="display:none;">
+  <span id="reply-text"></span>
+  <button onclick="cancelReply()">✖️</button>
+</div>
+    </main>
+  </div>
+</body>
+</html>

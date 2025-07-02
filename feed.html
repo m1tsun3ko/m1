@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Лента — M1</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/fonts.css" />
+  <script src="/assets/js/feed.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header frosty">
+      <h1 class="logo">M1</h1>
+      <nav class="nav">
+        <a href="/chat.html" class="nav-btn">Чаты</a>
+        <a href="#" class="nav-btn" onclick="openModal('/notifications.html')">Уведомления</a>
+        <a href="/my.html" class="nav-btn">Профиль</a>
+      </nav>
+    </header>
+
+    <main class="content frosty">
+      <div class="new-post">
+        <textarea id="new-post-text" placeholder="Что нового?"></textarea>
+        <button onclick="createPost()">Опубликовать</button>
+      </div>
+
+      <div id="feed-container">
+        <!-- Посты будут подгружаться сюда -->
+      </div>
+    </main>
+
+    <div class="popup frosty-glass" id="modal">
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+</body>
+</html>
