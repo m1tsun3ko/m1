@@ -2,7 +2,7 @@ const token = localStorage.getItem("token");
 const feed = document.getElementById("feed-container");
 
 async function loadFeed() {
-  const res = await fetch("https://versanainb.temp.swtest.ru/backend/user/post.php", {
+  const res = await fetch("http://versanainb.temp.swtest.ru/backend/user/post.php", {
     headers: { Authorization: token }
   });
   const posts = await res.json();
@@ -34,7 +34,7 @@ async function createPost() {
   const content = document.getElementById("new-post-text").value.trim();
   if (content.length < 1 || content.length > 1000) return alert("Невалидная длина");
 
-  const res = await fetch("https://versanainb.temp.swtest.ru/backend/user/post.php", {
+  const res = await fetch("http://versanainb.temp.swtest.ru/backend/user/post.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -53,7 +53,7 @@ async function createPost() {
 }
 
 async function likePost(id, btn) {
-  const res = await fetch("https://versanainb.temp.swtest.ru/backend/api/like_post.php", {
+  const res = await fetch("http://versanainb.temp.swtest.ru/backend/api/like_post.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

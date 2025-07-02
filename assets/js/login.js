@@ -6,7 +6,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
   const username = form.username.value.trim();
   const password = form.password.value;
 
-  const res = await fetch("https://versanainb.temp.swtest.ru/backend/auth/login.php", {
+  const res = await fetch("http://versanainb.temp.swtest.ru/backend/auth/login.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password })
@@ -31,7 +31,7 @@ document.getElementById("2fa-form").addEventListener("submit", async (e) => {
   e.preventDefault();
   const code = e.target.code.value.trim();
 
-  const res = await fetch("https://versanainb.temp.swtest.ru/backend/auth/verify_2fa.php", {
+  const res = await fetch("http://versanainb.temp.swtest.ru/backend/auth/verify_2fa.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ temp_token: tempToken, code })

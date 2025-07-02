@@ -6,7 +6,7 @@ const info = document.getElementById("profile-info");
 const posts = document.getElementById("user-posts");
 
 async function loadProfile() {
-  const res = await fetch(`https://versanainb.temp.swtest.ru/backend/user/profile.php?id=${userId}`, {
+  const res = await fetch(`http://versanainb.temp.swtest.ru/backend/user/profile.php?id=${userId}`, {
     headers: { Authorization: token }
   });
   const data = await res.json();
@@ -32,7 +32,7 @@ async function loadProfile() {
 }
 
 async function loadPosts() {
-  const res = await fetch(`https://versanainb.temp.swtest.ru/backend/user/post.php?user_id=${userId}`, {
+  const res = await fetch(`http://versanainb.temp.swtest.ru/backend/user/post.php?user_id=${userId}`, {
     headers: { Authorization: token }
   });
   const userPosts = await res.json();
@@ -50,7 +50,7 @@ async function loadPosts() {
 }
 
 async function checkBlock() {
-  const res = await fetch(`https://versanainb.temp.swtest.ru/backend/api/is_blocked.php?user_id=${userId}`, {
+  const res = await fetch(`http://versanainb.temp.swtest.ru/backend/api/is_blocked.php?user_id=${userId}`, {
     headers: { Authorization: token }
   });
   const json = await res.json();
@@ -61,7 +61,7 @@ async function toggleBlock() {
   const blocked = await checkBlock();
   const action = blocked ? "unblock" : "block";
 
-  await fetch(`https://versanainb.temp.swtest.ru/backend/api/block.php`, {
+  await fetch(`http://versanainb.temp.swtest.ru/backend/api/block.php`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

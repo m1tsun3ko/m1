@@ -5,7 +5,7 @@ document.getElementById("recovery-form").addEventListener("submit", async (e) =>
   const code = form.code.value.trim();
   const new_password = form.new_password.value;
 
-  const res = await fetch("https://versanainb.temp.swtest.ru/backend/auth/recovery.php", {
+  const res = await fetch("http://versanainb.temp.swtest.ru/backend/auth/recovery.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, code, new_password })
